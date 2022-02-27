@@ -1,0 +1,53 @@
+---
+title:"A3 Data Visualization Incarceration"
+author:"Jainaba Jawara"
+date:"02/25/2022"
+output:html_document
+---
+
+```{r setup, include=FALSE}
+chooseCRANmirror(graphics=FALSE, ind=1)
+knitr::opts_chunk$set(echo = TRUE)
+library("tidyverse")
+library("ggplot2")
+library("dplyr")
+install.packages("maps")
+library("maps")
+library("mapproj")
+```
+
+
+```{r, echo = FALSE, include = FALSE, message = FALSE, warnings = FALSE}
+source("../source/analysis.R")
+```
+## Introduction
+In this report, we'll examine at Vera Institute data on incarceration to determine if there's a chance for radical change. It calls for a radical rethinking of the most severe criminal penalty we have: jail. It accomplishes this by showing us how incarceration differs by race.We don't have a complete picture of how the jail population varies based on the data. The information provides the years.
+We'll concentrate on annual prison admissions by county (total prison adm) to do so.In the United States, the tale of mass incarceration is a story about race. As incarceration rates in jails and prisons rose to historically unprecedented levels in the 1970s, 1980s, and 1990s, the responsibilities of that development did not fall equally on all communities. The impact has been disastrous for black people in particular, ripping a swath of destruction through communities' economic and social fiber, assuring the perpetuation of systematic inequity that undermines our country's basic ideals.
+
+## Summary Information
+While looking through the data my interest leaned at comparing white and black jail populations. I started off looking at  Highest Black Population in A County,  "r highest_black_county", and Highest White  Population in A County   "r highest_white_county".
+Also the counties with the lowest jail population "r lowest_black_wa ", and "r lowest_white_wa".Also  Highest jail Population Year by race, "r black_highest_year" and "r white_highest_year". Also Largest race jail population in WA county wise "r highest_black_wa" and "r highest_white_wa". I am from Snohomish County, I wanted to see the number from my area, " r white_jail_pop_in_snohomish_county", and "r black_jail_pop_in_snohomish_county".
+
+## Time Trend Chart
+Included the chart to show the proportions of jailed people with respect to race and population over years.Blacks have long outnumbered whites in U.S. prisons. But a significant decline in the number of black prisoners has steadily narrowed the gap over the past decade, according to new data from the Bureau of Justice Statistics.
+
+```{r,echo=FALSE}
+plot(trend_chart)
+```
+
+## Variable Comparsion Chart
+I chose to compare the white and black population jail in the state of Washington. I think it was good to highlight the different proportions between the years.
+
+```{r,echo=FALSE}
+plot(variable_comparsion_data)
+```
+
+## Map
+
+I wanted to see the black-white jail ratio in Washington, in the counties the darker colors are showing the larger ratio compared to the lighter one being the smaller ratio.  
+```{r,echo=FALSE}
+plot(map_chart)
+```
+
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
